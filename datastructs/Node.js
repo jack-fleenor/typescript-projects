@@ -1,7 +1,6 @@
 var _Node = /** @class */ (function () {
     function _Node(val) {
         this.value = 0;
-        this.next = null;
         this.value = val;
     }
     _Node.prototype.SetNextNode = function (node) {
@@ -14,6 +13,52 @@ var _Node = /** @class */ (function () {
         return this.next;
     };
     return _Node;
+}());
+var OrderedLinkedList = /** @class */ (function () {
+    function OrderedLinkedList() {
+        this.head = null;
+    }
+    OrderedLinkedList.prototype.Insert = function (val) {
+        var tempNode = new _Node(val);
+        if (this.head == null) {
+            this.head = tempNode;
+        }
+        else {
+            if (this.head.GetValue() < val) {
+                tempNode.SetNextNode(this.head);
+                this.head = tempNode;
+            }
+            else {
+                this.DeepInsert(tempNode);
+            }
+        }
+    };
+    OrderedLinkedList.prototype.DeepInsert = function (n) {
+        var currNode = this.head;
+        while (currNode.GetNextNode() != null &&
+            currNode.GetNextNode().GetValue() > n.GetValue()) {
+            console.log(currNode.GetValue());
+            currNode = currNode.GetNextNode();
+        }
+        if (currNode.GetNextNode == null &&
+            currNode.GetValue() > n.GetValue()) {
+            console.log(currNode.GetValue());
+            currNode.SetNextNode(n);
+        }
+        else if (currNode.GetNextNode() != null &&
+            currNode.GetValue() < n.GetValue()) {
+            n.SetNextNode(currNode.GetNextNode());
+            currNode.SetNextNode(n);
+        }
+    };
+    OrderedLinkedList.prototype.PrintList = function () {
+        var currNode = this.head;
+        while (currNode.GetNextNode() != null) {
+            console.log("".concat(currNode.GetValue(), " points to -> ").concat(currNode.GetNextNode().GetValue()));
+            currNode = currNode.GetNextNode();
+        }
+    };
+    return OrderedLinkedList;
 }());
 var _LinkedList = /** @class */ (function () {
     function _LinkedList() {
@@ -34,8 +79,9 @@ var _LinkedList = /** @class */ (function () {
     };
     return _LinkedList;
 }());
-var list = new _LinkedList;
-list.Insert(25);
-list.Insert(30);
-list.Insert(35);
-list.Traverse();
+var orderedList = new OrderedLinkedList;
+orderedList.Insert(5);
+orderedList.Insert(2);
+orderedList.Insert(17);
+orderedList.Insert(1);
+orderedList.PrintList();
