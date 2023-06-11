@@ -24,8 +24,6 @@ var CLinkedList = /** @class */ (function () {
         this.size -= 1;
     };
     CLinkedList.prototype.insert = function (_value) {
-        console.log(_value);
-        // const { value } = _value;
         var tempNode = new Node_1.CNode(_value);
         if (this.head == null) {
             this.head = tempNode;

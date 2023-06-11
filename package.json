@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "compile": "tsc src/*.ts",
+    "compile": "tsc src/*.ts datastructs/**/*.ts",
     "start": "node src/index.js"
   },
   "devDependencies": {
