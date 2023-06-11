@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "compile": "tsc src/*.ts",
+    "start": "node src/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.6"
+  }
+}

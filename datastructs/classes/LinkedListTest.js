@@ -1,0 +1,11 @@
+"use strict";
+var _a, _b, _c, _d, _e, _f;
+exports.__esModule = true;
+var LinkedList_1 = require("./LinkedList");
+var linkedList = new LinkedList_1.CLinkedList();
+linkedList.insert(0);
+linkedList.insert(22);
+linkedList.insert(15);
+console.log("Head node: ".concat((_a = linkedList.getHead()) === null || _a === void 0 ? void 0 : _a.getValue()));
+console.log("Next node: ".concat((_c = (_b = linkedList.getHead()) === null || _b === void 0 ? void 0 : _b.getNext()) === null || _c === void 0 ? void 0 : _c.getValue()));
+console.log("Last node: ".concat((_f = (_e = (_d = linkedList.getHead()) === null || _d === void 0 ? void 0 : _d.getNext()) === null || _e === void 0 ? void 0 : _e.getNext()) === null || _f === void 0 ? void 0 : _f.getValue()));

@@ -1,5 +1,5 @@
 
-class _Node {
+export class _Node {
   private value: number = 0;
   private next: _Node;
   constructor(val: number){
@@ -16,7 +16,7 @@ class _Node {
   }
 }
 
-class OrderedLinkedList {
+export class OrderedLinkedList {
   private head: _Node;
 
   constructor() {
@@ -68,7 +68,7 @@ class OrderedLinkedList {
 
 }
 
-class _LinkedList {
+export class _LinkedList {
   private head: _Node = null;
   constructor() {
     this.head = null;
