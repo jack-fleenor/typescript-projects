@@ -1,7 +1,7 @@
 import { CNode } from "./Node";
 export class CLinkedList {
-  private head: CNode | null;
-  private size: number = 0;
+  private head!: CNode | null;
+  private size = 0;
 
   constructor(){
     this.setHead(null)
@@ -29,7 +29,7 @@ export class CLinkedList {
   }
 
   public insert(_value: string | number): void {
-    let tempNode = new CNode(_value);
+    const tempNode = new CNode(_value);
     if(this.head == null){
       this.head = tempNode;
     } else {

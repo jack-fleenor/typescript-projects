@@ -1,9 +1,31 @@
 {
+  "name": "typescript-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "compile": "tsc src/*.ts datastructs/**/*.ts",
-    "start": "node src/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node ./dist/index.js"
   },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.2.6"
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/chalk-animation": "^1.6.1",
+    "@types/figlet": "^1.5.6",
+    "@types/gradient-string": "^1.1.2",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^20.3.1",
+    "chalk": "^5.2.0",
+    "chalk-animation": "^2.0.3",
+    "figlet": "^1.6.0",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^9.2.7",
+    "nanospinner": "^1.1.0"
   }
 }

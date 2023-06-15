@@ -6,9 +6,9 @@ export interface INodeConstructor {
 }
 
 export class CNode {
-  private previous: CNode | null;
-  private value: string | number;
-  private next: CNode | null;
+  private previous!: CNode | null;
+  private value!: string | number;
+  private next!: CNode | null;
 
   constructor(props: string | number) {
     this.setValue(props);

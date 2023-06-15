@@ -1,7 +1,6 @@
 import { CLinkedList } from "./LinkedList";
 
-let linkedList = new CLinkedList();
-
+const linkedList = new CLinkedList();
 linkedList.insert(0);
 linkedList.insert(22);
 linkedList.insert(15);
