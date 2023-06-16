@@ -2,7 +2,7 @@
 import chalk from 'chalk';
 import chalkAnimation from 'chalk-animation';
 import { sleep } from './utils/index.js';
-import { askName, multipleChoice } from './prompts/index.js';
+import { askName, createLinkedList, multipleChoice } from './prompts/index.js';
 let playerName = 'John Doe';
 async function welcome() {
     const rainbowTitle = chalkAnimation.rainbow('This is a test of the rainbow animation\n');
@@ -16,3 +16,4 @@ async function welcome() {
 await welcome();
 await askName();
 await multipleChoice();
+await createLinkedList();

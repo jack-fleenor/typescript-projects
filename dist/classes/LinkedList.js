@@ -1,4 +1,4 @@
-import { CNode } from "./Node";
+import { CNode } from "./Node.js";
 export class CLinkedList {
     constructor() {
         this.size = 0;
