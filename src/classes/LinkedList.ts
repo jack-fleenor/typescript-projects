@@ -1,4 +1,4 @@
-import { CNode } from "./Node";
+import { CNode } from "./Node.js";
 export class CLinkedList {
   private head!: CNode | null;
   private size = 0;
@@ -35,6 +35,15 @@ export class CLinkedList {
     } else {
       tempNode.setNext(this.head);
       this.head = tempNode;
+    }
+  }
+
+  public print(): void {
+    let currNode = this.head;
+    while(currNode != null)
+    {
+      console.log(`Node value: ${currNode.getValue()}`);
+      currNode = currNode.getNext();
     }
   }
 

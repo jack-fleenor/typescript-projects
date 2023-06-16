@@ -30,4 +30,11 @@ export class CLinkedList {
             this.head = tempNode;
         }
     }
+    print() {
+        let currNode = this.head;
+        while (currNode != null) {
+            console.log(`Node value: ${currNode.getValue()}`);
+            currNode = currNode.getNext();
+        }
+    }
 }

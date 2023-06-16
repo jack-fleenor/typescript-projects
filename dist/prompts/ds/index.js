@@ -5,70 +5,9 @@
  *
  * */
 import inquirer from 'inquirer';
-import { sleep } from '../utils/index.js';
-import { createSpinner } from 'nanospinner';
-import { CNode } from '../classes/Node.js';
-import { CLinkedList } from '../classes/LinkedList.js';
-/**
- * Prompts the user to enter their name.
-* @return {Promise<void>}
-*
-* */
-export async function askName() {
-    // Need to remove this any, it sucks.
-    const answers = await inquirer.prompt({
-        name: 'player_name',
-        type: 'input',
-        message: 'What is your name?',
-        default() {
-            return 'Player';
-        },
-    });
-    console.log(`You entered: ${answers.player_name}`);
-}
-/**
- * Prompts the user to select a multiple choice question.
-* @return {Promise<void>}
-*
-* */
-export async function multipleChoice() {
-    // Need to remove this any, it sucks.
-    const answers = await inquirer.prompt({
-        name: 'multiple_choice',
-        type: 'list',
-        message: 'This is a multiple choice question',
-        choices: [
-            'A',
-            'B',
-            'C',
-            'D'
-        ],
-    });
-    /** this checks to see if an answer is correct or not. */
-    await handleAnswer(answers.multiple_choice == 'C');
-}
-/**
-* @param {Boolean} isCorrect <- Pass in whether or not it matches
-*                  expected answer, this is the responsiblity of
-*                  the prompt calling this function. handleAnswer
-*                  only creates a spinner and displays a success
-*                  or failure message.
-* @return {Promise<void>} returns a promise.
-*
-* */
-export async function handleAnswer(isCorrect) {
-    // This creates the loading spinner
-    // Need to remove this any, it sucks.
-    const spinner = createSpinner('Checking answer...').start();
-    await sleep();
-    if (isCorrect) {
-        spinner.success({ text: 'You entered the correct answer.' });
-    }
-    else {
-        spinner.error({ text: 'You entered the wrong answer.' });
-        process.exit(1);
-    }
-}
+import { sleep } from '../../utils/index.js';
+import { CNode } from '../../classes/Node.js';
+import { CLinkedList } from '../../classes/LinkedList.js';
 export async function nodePrompt() {
     let value;
     const answers = await inquirer.prompt({
@@ -117,7 +56,7 @@ export async function printLinkedListPrompt(list) {
     });
     if (answers.value_input == 'Y') {
         console.log('First node value: ');
-        list.print();
+        list.getHead()?.getValue();
     }
 }
 export async function createLinkedList() {
