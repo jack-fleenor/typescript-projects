@@ -116,7 +116,6 @@ export async function printLinkedListPrompt(list) {
         },
     });
     if (answers.value_input == 'Y') {
-        console.log('First node value: ');
         list.print();
     }
 }

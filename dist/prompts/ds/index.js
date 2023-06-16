@@ -55,8 +55,7 @@ export async function printLinkedListPrompt(list) {
         },
     });
     if (answers.value_input == 'Y') {
-        console.log('First node value: ');
-        list.getHead()?.getValue();
+        list.print();
     }
 }
 export async function createLinkedList() {

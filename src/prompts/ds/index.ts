@@ -10,6 +10,13 @@ import { sleep } from '../../utils/index.js';
 import { CNode } from '../../classes/Node.js';
 import { CLinkedList } from '../../classes/LinkedList.js';
 
+/**
+ * Function prompts users to get a value that is returned.
+ * The idea is that you would do
+ * `const value = await nodePrompt();`
+ * `const node = new CNode(value);`
+ * @returns {Promise<string | number>}
+ */
 export async function nodePrompt(): Promise<string | number> {
   let value: string | number;
   const answers: any = await inquirer.prompt({
@@ -24,6 +31,13 @@ export async function nodePrompt(): Promise<string | number> {
   return value;
 }
 
+/**
+ * Function prompts users to create a list by
+ * getting a value and returning a new linked list
+ * The idea is that you would do
+ * `const list = new CLinkedList();`
+ * @returns {Promise<CLinkedList>}
+ */
 export async function linkedListPrompt(): Promise<CLinkedList> {
   console.log('Creating linked list...')
   await sleep();
@@ -60,8 +74,7 @@ export async function printLinkedListPrompt(list: CLinkedList): Promise<void> {
     },
   }); 
   if(answers.value_input == 'Y'){
-    console.log('First node value: ')
-    list.getHead()?.getValue();
+    list.print();
   }
 }
 

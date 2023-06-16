@@ -3,7 +3,8 @@
 import chalk from 'chalk';
 import chalkAnimation from 'chalk-animation';
 import { sleep } from './utils/index.js';
-import { askName, createLinkedList, multipleChoice } from './prompts/index.js';
+import { askName, multipleChoice } from './prompts/index.js';
+import { createLinkedList } from './prompts/ds/index.js';
 
 let playerName: string = 'John Doe';
 
